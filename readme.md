@@ -42,7 +42,7 @@ i.e.
 
 `melee` + `apple`: score of melee + score of apple - duplication of `e` - duplication of `p` - position of `e` (on index of 4)
 
-12.03 + 8.46 - ( 4 - 1 ) _ duplication_factor - ( 2 - 1 ) _ duplication_factor - ( 2 - 1 ) \* position_factor
+12.03 + 8.46 - ( 4 - 1 ) \* duplication_factor - ( 2 - 1 ) \* duplication_factor - ( 2 - 1 ) \* position_factor
 
 ## sample_range.json
 
