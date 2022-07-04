@@ -10,9 +10,19 @@ wordle guessing strategy
 
 3. `brave` + `flint` + `shock` + `pudgy`
 
+# ! notice
+
+Wordle is only using 2315 words, but there are actually 4k+ words in English Dictionary.
+
+use `squid` to check your wordle's version
+
+For 4266 `5-letter` words, there are NO five letter words that uses different letters from each other for best 5.
+
 ## file
 
-word.txt: 5 letter words in English dictionary
+word.txt: 5 letter words in Wordle dictionary
+
+word_4266.txt: not used, a comprehensive list of 5 letter words in English dictionary
 
 position.json: [ "LetterPosition":"occurrence" ]
 
