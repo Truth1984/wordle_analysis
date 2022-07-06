@@ -6,6 +6,7 @@
     <meta name="author" content="awada">
 
     <title>wordle guesser</title>
+    <meta name="description" content="wordle guessing engine">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -17,35 +18,45 @@
   <body class="bg-light">
 
     <div class="container">
-      <div class="py-5 text-center">
+      <div class="text-center">
         <h2>wordle searcher</h2>
       </div>
 
-      <div class="p-5">
-        <form class="container">
-            <span class="row"> include <input type="text" class="input" id="include" maxlength="26" autocomplete="off" style="text-transform:uppercase" />  </span>  
-            <div class="row"> &nbsp; </div>
-            <span class="row"> exclude <input type="text" class="input" id="exclude" maxlength="26" autocomplete="off" style="text-transform:uppercase" /> </span> 
-            <div class="row"> &nbsp; </div>
-            <span class="row"> position </span>
-      
-            <span class="row">
-            <input type="text" class="text-center input" id="i0" maxlength="1" style="width: 60px; height: 60px; text-transform:uppercase; font-size: medium;">
-            <input type="text" class="text-center input" id="i1" maxlength="1" style="width: 60px; height: 60px; text-transform:uppercase; font-size: medium;">
-            <input type="text" class="text-center input" id="i2" maxlength="1" style="width: 60px; height: 60px; text-transform:uppercase; font-size: medium;">
-            <input type="text" class="text-center input" id="i3" maxlength="1" style="width: 60px; height: 60px; text-transform:uppercase; font-size: medium;">
-            <input type="text" class="text-center input" id="i4" maxlength="1" style="width: 60px; height: 60px; text-transform:uppercase; font-size: medium;">
-            </span>
-            <div class="row"> &nbsp; </div>
-            <!-- button, search -->
-            <button type="button" class="btn btn-primary" id="search" onclick="s.clickSearch()">search</button>
-            <!-- button, clear -->
-            <button type="button" class="btn btn-primary" id="clear" onclick="s.clickClear()">clear</button>
-            <div class="row"> &nbsp; </div>
-            <!-- textbox, show result -->
-            <span class="row"> length <input type="text" class="input" id="length" autocomplete="off" disabled /></span>
-            <div class="row"> &nbsp; </div>
-            <textarea class="form-control" id="result" rows="10" ></textarea>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">include</span>
+        </div>
+        <input type="text" class="form-control input" id="include" maxlength="26" autocomplete="off" style="text-transform:uppercase" />
+      </div>
+
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">exclude</span>
+        </div>
+        <input type="text" class="form-control input" id="exclude" maxlength="26" autocomplete="off" style="text-transform:uppercase" />
+      </div>
+
+      <div class="row"> &nbsp; </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">position</span>
+        </div>
+        <input type="text" class="form-control text-center input" id="i0" maxlength="1" style="width: 60px; height: 60px; text-transform:uppercase; font-size: medium;">
+        <input type="text" class="form-control text-center input" id="i1" maxlength="1" style="width: 60px; height: 60px; text-transform:uppercase; font-size: medium;">
+        <input type="text" class="form-control text-center input" id="i2" maxlength="1" style="width: 60px; height: 60px; text-transform:uppercase; font-size: medium;">
+        <input type="text" class="form-control text-center input" id="i3" maxlength="1" style="width: 60px; height: 60px; text-transform:uppercase; font-size: medium;">
+        <input type="text" class="form-control text-center input" id="i4" maxlength="1" style="width: 60px; height: 60px; text-transform:uppercase; font-size: medium;">
+      </div>
+      <div class="row"> &nbsp; </div>
+      <!-- button, search -->
+      <button type="button" class="btn btn-primary" id="search" onclick="s.clickSearch()">search</button>
+      <!-- button, clear -->
+      <button type="button" class="btn btn-primary" id="clear" onclick="s.clickClear()">clear</button>
+      <div class="row"> &nbsp; </div>
+      <!-- textbox, show result -->
+      <span class="row"> length <input type="text" class="input" id="length" autocomplete="off" disabled /></span>
+      <div class="row"> &nbsp; </div>
+      <textarea class="form-control" id="result" rows="10" ></textarea>
     </div>
 
     <!-- Bootstrap core JavaScript
@@ -53,26 +64,7 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script>
-      // Example starter JavaScript for disabling form submissions if there are invalid fields
-      (function() {
-        'use strict';
-
-        window.addEventListener('load', function() {
-          // Fetch all the forms we want to apply custom Bootstrap validation styles to
-          var forms = document.getElementsByClassName('needs-validation');
-
-          // Loop over them and prevent submission
-          var validation = Array.prototype.filter.call(forms, function(form) {
-            form.addEventListener('submit', function(event) {
-              if (form.checkValidity() === false) {
-                event.preventDefault();
-                event.stopPropagation();
-              }
-              form.classList.add('was-validated');
-            }, false);
-          });
-        }, false);
-      })();
+     s.clickKeyboardListener();
     </script>
   
 

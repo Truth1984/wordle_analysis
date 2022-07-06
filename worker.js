@@ -2357,3 +2357,10 @@ s.clickSearch = () => {
   document.getElementById("result").value = result.join("\n");
   document.getElementById("length").value = result.length;
 };
+
+s.clickKeyboardListener = () => {
+  document.addEventListener("keydown", (e) => {
+    if (e.key == "Enter") s.clickSearch();
+    if (e.key == "Escape") s.clickClear();
+  });
+};
