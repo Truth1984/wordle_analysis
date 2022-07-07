@@ -16,6 +16,8 @@ Wordle is only using 2315 words, but there are actually 9k+ words in nswl2020.
 
 use `squid` to check your wordle's version
 
+Even for 9k+ words, combination of five words must have a common character.
+
 ## file
 
 word.txt: 5 letter words in Wordle dictionary
